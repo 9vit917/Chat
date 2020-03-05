@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
     render() {
         const onFinish = values => {
             console.log('Received values of form: ', values);
@@ -21,6 +21,18 @@ class LoginForm extends Component {
                 }}
                 onFinish={onFinish}
                 >
+                <Form.Item
+                    name="mail"
+                    rules={[
+                    {
+                        required: true,
+                        message: 'Please input your Email!',
+                    },
+                    ]}
+                    hasFeedback
+                >
+                    <Input size="large" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
+                </Form.Item>
                 <Form.Item
                     name="username"
                     rules={[
@@ -53,12 +65,12 @@ class LoginForm extends Component {
 
                 <Form.Item>
                     <Button type="primary" htmlType="submit" className="login-form-button">
-                        Log in
+                        Register
                     </Button>
                 </Form.Item>
                 <Form.Item>
-                    <Link className="auth__register-link" to="/registe">
-                        Register
+                    <Link className="auth__register-link" to="/login">
+                        Sign In
                     </Link>
                 </Form.Item>
             </Form>
@@ -67,4 +79,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default RegisterForm;
