@@ -1,0 +1,45 @@
+@import "~styles/variables";
+
+.message {
+    $self: &;
+    display: flex;
+
+    &__avatar {
+        display: flex;
+        flex-direction: column-reverse;
+        img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 13px;
+            margin-bottom: 18px;
+        }
+    }
+
+    &__content {
+        &__wrapper {
+            background-color: $blue;
+            box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
+            border-radius: 12px 12px 12px 0px;
+            padding: 15px;
+            margin-bottom: 8px;
+        }
+        &__text {
+            color: #fff;
+            font-size: 14px;
+        }
+        &__date {
+            opacity: 0.5;
+            color: grey;
+            font-size: 12px;
+        }
+    }
+    &--friend {
+        #{$self}__content {
+            &__wrapper {
+                background-color: grey;
+                border: 1px solid white;
+            }
+        }
+    }
+}
