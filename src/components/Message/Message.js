@@ -21,6 +21,9 @@ const Message = ( props ) => (
                     { formatDistanceToNow(new Date(props.date), {addSuffix: true}) }
                 </div>
             </div>
+            <div className="message__status">
+                <span className={classNames("message__status__icon", {"readed": props.isReaded, "not-readed": !props.isReaded})}></span>
+            </div>
         </div>
     </div>
 )

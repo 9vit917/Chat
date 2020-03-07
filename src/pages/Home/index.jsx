@@ -6,10 +6,17 @@ const Home = () => {
     return (
         <div>
             <Message
-            avatar="https://cdn3.iconfinder.com/data/icons/shipping-and-delivery-2-1/512/54-512.png"
+            avatar="https://lh3.googleusercontent.com/proxy/AzFN9loPSa6A7RWaguMuYtgahe_VA6xEtTgaR7ydKPQi3lwCch6O4draFuIWShDjN_c_GKvoeMrHxO32Efo-HjuFSsEdFVHgkwibOOI8pUasfhpEBw"
             text="azaza raka maka fo fristylo"
             date="Fri Mar 06 2020 18:41:08"
-            isMe={true}/>
+            isMe={false}
+            isReaded={true}/>
+            <Message
+            avatar="https://images.alphacoders.com/711/thumb-350-711581.jpg"
+            text="azaza raka maka fo fristylo"
+            date="Fri Mar 06 2020 18:41:08"
+            isMe={true}
+            isReaded={false}/>
         </div>
     );
 };
