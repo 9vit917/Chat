@@ -1,25 +1,32 @@
 @import "~styles/variables";
+
+@keyframes traffic {
+    0% { background: #80808000 }
+    50% { background: white }
+    100% { background: #80808000 }
+}
+
 .message {
     $self: &;
     display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
     &__avatar {
-        display: flex;
-        flex-direction: column-reverse;
         img {
             border-radius: 50%;
             width: 30px;
             height: 30px;
-            margin: 18px 13px;
+            margin: 0 13px;
         }
     }
     &__content {
+        position: relative;
         &__wrapper {
             background-color: $blue;
             box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
             border-radius: 12px 12px 12px 0px;
             border: 1px solid #9393ff;
             padding: 15px;
-            margin-bottom: 8px;
             max-width: 400px;
         }
         &__text {
@@ -30,13 +37,19 @@
             opacity: 0.5;
             color: grey;
             font-size: 12px;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+        }
+        &__attachment {
+            max-height: 300px;
+            max-width: 250px;
+            border-radius: 5%;
         }
     }
     &__status {
-        display: flex;
-        flex-direction: column-reverse;
-        margin-bottom: 16px;
         margin-left: 5px;
+        margin-top: 20px;
         &__icon {
             width: 13px;
             height: 13px;
@@ -53,17 +66,7 @@
     }
     &--friend {
         flex-direction: row-reverse;
-        #{$self}__avatar {
-            display: flex;
-            flex-direction: column-reverse;
-            img {
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                margin-right: 13px;
-                margin-bottom: 18px;
-            }
-        }
+        
         #{$self}__content {
             &__wrapper {
                 background: #FFFFFF;
@@ -75,12 +78,36 @@
                 font-size: 14px;
             }
             &__date {
-                display: flex;
-                flex-direction: row-reverse;
+                right: 5px;
+                left: unset;
             }
         }
         #{$self}__status {
             margin-right: 5px;
+        }
+    }
+
+    &--typing {
+        #{$self}__content {
+            &__typing {
+                list-style: none;
+                display: flex;
+                li {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    margin: 2px 2px ;
+                }
+                li:nth-of-type(1) {
+                    animation: traffic 1.5s infinite;
+                }
+                li:nth-of-type(2) {
+                    animation: traffic 1.5s infinite 0.35s;
+                }
+                li:nth-of-type(3) {
+                    animation: traffic 1.5s infinite 0.7s;
+                }
+            }
         }
     }
 }
