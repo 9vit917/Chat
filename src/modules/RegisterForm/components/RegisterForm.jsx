@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
 import { Form, Input } from 'antd';
-import { Button, Block } from '../../../components';
 import { Link } from 'react-router-dom';
-
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
+
+import { Button, Block } from '../../../components';
+import validateReg from '../../../global/validations'
 
 class RegisterForm extends Component {
     render() {
@@ -67,6 +67,15 @@ class RegisterForm extends Component {
                             required: true,
                             message: 'Please input your Password!',
                         },
+                        () => ({
+                            validator(rule,value) {
+                                return (
+                                    validateReg.isPasswordValid(value) ?
+                                    Promise.resolve():
+                                    Promise.reject('Too easy password, please add upercase symbol and number ')
+                                    )
+                            }
+                        })
                         ]}
                         hasFeedback
                     >
