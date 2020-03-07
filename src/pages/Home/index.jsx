@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Message
-            avatar="https://lh3.googleusercontent.com/proxy/AzFN9loPSa6A7RWaguMuYtgahe_VA6xEtTgaR7ydKPQi3lwCch6O4draFuIWShDjN_c_GKvoeMrHxO32Efo-HjuFSsEdFVHgkwibOOI8pUasfhpEBw"
+            avatar="https://filmschoolrejects.com/wp-content/uploads/2017/04/0JRofTsuy93evl_J5.jpg"
             text="azaza raka maka fo fristylo"
             date="Fri Mar 06 2020 18:41:08"
             isMe={false}

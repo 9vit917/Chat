@@ -63,17 +63,9 @@ class RegisterForm extends Component {
                     <Form.Item
                         name="password"
                         rules={[
-                        {   
-                            required: true,
-                            message: 'Please input your Password!',
-                        },
                         () => ({
                             validator(rule,value) {
-                                return (
-                                    validateReg.isPasswordValid(value) ?
-                                    Promise.resolve():
-                                    Promise.reject('Too easy password, please add upercase symbol and number ')
-                                    )
+                                return validateReg.isPasswordValid(value);
                             }
                         })
                         ]}
