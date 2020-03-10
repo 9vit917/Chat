@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Message } from "../../components"
+import { Message, DialogItem } from "../../components";
+import './index.scss';
 
 const Home = () => {
     return (
@@ -29,6 +30,9 @@ const Home = () => {
             isMe={true}
             attachment={["https://i.pinimg.com/originals/f4/d2/96/f4d2961b652880be432fb9580891ed62.png"]}
             isReaded={true}/>
+            <div className="dialogList">
+            <DialogItem img="https://images.alphacoders.com/711/thumb-350-711581.jpg" />
+            </div>
         </div>
     );
 };

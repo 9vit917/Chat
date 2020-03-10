@@ -42,9 +42,11 @@
             left: 0;
         }
         &__attachment {
-            max-height: 300px;
-            max-width: 250px;
             border-radius: 5%;
+            img {
+                max-height: 300px;
+                max-width: 250px;
+            }
         }
     }
     &__status {

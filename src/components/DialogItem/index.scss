@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.dialog__item {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    &__content {
+        width: 100%;
+        &__top {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 4px;
+            &__sender {
+                flex: auto;
+                font-weight: 500;
+                font-size: 14px;
+                color: $black;
+            }
+            &__date {
+                font-size: 14px;
+                opacity: 0.4;
+                color: $black;
+            }
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: row;
+            &__text {
+                flex: auto;
+                color: $black;
+                font-size: 14px;
+                opacity: 0.4;
+            }
+            &__count {
+                position: relative;
+                background: #F46B6B;
+                border-radius: 50%;
+                border: 3px solid #FFFFFF;
+                width: 20px;
+                height: 20px;
+                font-size: 11px;
+                color: white;
+                span {
+                    position: absolute;
+                    top: 2px;
+                    left: 4.5px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
