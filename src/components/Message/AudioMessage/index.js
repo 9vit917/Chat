@@ -1,14 +1,35 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import play from '../static/play.svg';
 import pause from '../static/pause.svg';
+import { convertTime } from '../../../global/helpers';
 
 import './index.scss';
 
 
 const AudioMessage = ( props ) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
     const audio = useRef(null);
+
+    useEffect(() => {
+
+        audio.current.addEventListener("timeupdate", () => {
+            const duration = audio ? audio.current.duration : 0;
+
+            if(audio.current.currentTime === duration) {
+                setProgress(0);
+                setIsPlaying(false);
+                setCurrentTime(0);
+            }
+            else{
+                let time = Math.floor(duration) - Math.floor(audio.current.currentTime);
+                setProgress((audio.current.currentTime / duration) * 100);
+                setCurrentTime(audio.current.currentTime);
+            }
+        })
+    }, [])
 
     const player = (ev) => {
         if(!isPlaying) {
@@ -23,8 +44,8 @@ const AudioMessage = ( props ) => {
 
     return (
         <div className="audio-message">
-            <audio ref={audio} src={ props.audio } preload="auto"/>
-            <div className="audio-message__progress">
+            <audio ref={audio} src={ props.audio } preload="metadata"/>
+            <div className="audio-message__progress" style={{width: progress + "%"}}>
                 
             </div>
             <div className="audio-message__info">
@@ -43,7 +64,7 @@ const AudioMessage = ( props ) => {
                 </div>
                 <div className="audio-message__info__duration">
                     <span>
-                        00:19
+                        { convertTime(currentTime) }
                     </span>
                 </div>
             </div>
