@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import classNames from "classnames";
 
-import Avatar from "./Avatar"
+import Avatar from "./Avatar";
+import Typing from "./Typing";
+import AudioMessage from "./AudioMessage";
 import './index.scss';
 
 
@@ -31,28 +33,17 @@ const setText = (text) => {
     )
 }
 
-const setTypingAnimation = () => {
-    return (
-        <ul className="message__content__typing">
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    )
-}
-
 const Message = ( props ) => (
 
         <div className={ classNames('message' , 
-            {"message--friend": props.isMe, 
-            "message--typing": props.isTyping}) 
+            {"message--friend": props.isMe}) 
             }>
             <Avatar img={ props.avatar } />
             <div className="message__content">
                 {   (props.text || props.isTyping) && 
                     (<div className="message__content__wrapper">
                         { props.text && setText(props.text) }
-                        { props.isTyping && setTypingAnimation() }
+                        { props.isTyping && <Typing /> }
                     </div>)
                 }
                 {
@@ -60,6 +51,14 @@ const Message = ( props ) => (
                     <div className="message__content__attachment">
                         <img src={props.attachment[0]} alt="attachment"/>
                     </div>
+                }
+                {
+                    props.audio && 
+                    (
+                        <div className="message__content__wrapper">
+                            <AudioMessage audio={props.audio}/>
+                        </div>        
+                    )
                 }
                 { props.date && setDate(props.date) }
             </div>
@@ -74,7 +73,8 @@ Message.propTypes = {
     date: PropTypes.string,
     isMe: PropTypes.bool,
     isTyping: PropTypes.bool,
-    attachment: PropTypes.array
+    attachment: PropTypes.array,
+    audio: PropTypes.string
 };
 
 

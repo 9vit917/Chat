@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Message, DialogItem } from "../../components";
+import { Message, Dialogs } from "../../components";
 import './index.scss';
 
 const Home = () => {
@@ -30,9 +30,12 @@ const Home = () => {
             isMe={true}
             attachment={["https://i.pinimg.com/originals/f4/d2/96/f4d2961b652880be432fb9580891ed62.png"]}
             isReaded={true}/>
-            <div className="dialogList">
-            <DialogItem img="https://images.alphacoders.com/711/thumb-350-711581.jpg" />
-            </div>
+            <Message
+            avatar="https://images.alphacoders.com/711/thumb-350-711581.jpg"
+            isMe={false}
+            audio="https://notificationsounds.com/soundfiles/298f95e1bf9136124592c8d4825a06fc/file-sounds-1105-rush.mp3"
+            isReaded={true}/>
+            <Dialogs />
         </div>
     );
 };

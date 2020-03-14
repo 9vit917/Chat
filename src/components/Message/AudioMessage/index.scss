@@ -1,0 +1,44 @@
+.audio-message {
+    height: 25px;
+    audio {
+        display: null;
+    }
+    &__progress {
+        background-color: #418fff;
+        width: 30%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__info {
+        height: 100%;
+        display: flex;
+        position: relative;
+        &__btn {
+            button{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background-color: #0F3997;
+                color: white;
+                border: 1px solid #7f7fb1;
+                font-weight: bold;
+            }
+        }
+        &__wave {
+            background-image: url(https://icons.iconarchive.com/icons/icons8/windows-8/256/Music-Audio-Wave-icon.png);
+            width: 150px;
+            background-size: 20%;
+            background-position-y: -3px;
+            margin: 0 10px;
+        }
+        &__duration {
+            span{
+                opacity: 0.5;
+                font-size: 12px;
+                color: white;
+            }
+        }
+    }
+}
