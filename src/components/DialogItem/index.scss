@@ -1,25 +1,47 @@
 @import '../../styles/variables';
 
 .dialog__item {
+    $root: &;
+
     display: flex;
     flex-direction: row;
-    min-width: 300px;
+    padding: 5px 0;
+    cursor: pointer;
+    &:hover {
+        background:linear-gradient(160deg, rgba(80,63,245,1) 0%, rgba(127,140,255,1) 100%);
+            #{$root}__content {
+                &__top {
+                    &__sender {
+                        color: white;
+                    }
+                    &__date {
+                        color: $white;
+                    }
+                }
+                &__bottom {
+                    &__text {
+                        color: $white;
+                    }
+                }
+            }
+    }
     &__content {
         width: 100%;
+        padding-right: 5px;
         &__top {
             display: flex;
             flex-direction: row;
-            margin-bottom: 4px;
+            margin-bottom: 7px;
+            margin-top: 3px;
             &__sender {
                 flex: auto;
-                font-weight: 500;
-                font-size: 14px;
-                color: $black;
+                font-weight: bold;
+                font-size: 13px;
+                color: $text-strong;
             }
             &__date {
-                font-size: 14px;
-                opacity: 0.4;
-                color: $black;
+                font-size: 13px;
+                color: $text-light;
             }
         }
         &__bottom {
@@ -27,9 +49,8 @@
             flex-direction: row;
             &__text {
                 flex: auto;
-                color: $black;
-                font-size: 14px;
-                opacity: 0.4;
+                color: $text-light;
+                font-size: 13px;
             }
             &__count {
                 position: relative;

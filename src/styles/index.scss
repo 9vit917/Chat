@@ -1,10 +1,14 @@
 @import '~reset-css';
 @import '~antd/dist/antd.css';
 
+body {
+    background-color:#edecf6;
+}
+
 body,
 html,
 #root,
 .wrapper{
     height: 100%;
-    color: #202020;
+    font-family: "Tahoma";
 }

@@ -17,7 +17,7 @@
         display: flex;
         position: relative;
         &__btn {
-            button{
+            button {
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
@@ -27,6 +27,9 @@
                 font-weight: bold;
                 cursor: pointer;
                 outline: 0;
+                img {
+                    padding: 1px;
+                }
             }
         }
         &__wave {
