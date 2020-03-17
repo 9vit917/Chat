@@ -9,12 +9,12 @@ import Avatar from '../Message/Avatar'; //maybe move up from message component
 const DialogItem = ( props ) => (
     <div className="dialog__item">
         <div className="dialog__item__avatar">
-            <Avatar img={ props.img }/>
+            <Avatar img={ props.user.avatar } name={ props.user.fullname }/>
         </div>
         <div className="dialog__item__content">
             <div className="dialog__item__content__top">
                 <b className="dialog__item__content__top__sender">
-                    Kazachenka Viktar {/* { fullName } */}
+                    { props.user.fullname }
                 </b>
                 <div className="dialog__item__content__top__date">
                     today{/* { formatDistanceToNow(new Date(date), {addSuffix: true}) } */}
@@ -23,7 +23,7 @@ const DialogItem = ( props ) => (
 
             <div className="dialog__item__content__bottom">
                 <p className="dialog__item__content__bottom__text">
-                    IN PURSUIT is back with... {/* { texMessage } */}
+                    { props.text.substring(0, 50) + '...' }
                 </p>
                 <div className="dialog__item__content__bottom__count">
                     <span>3</span>{/* { quantity } */}
@@ -35,7 +35,8 @@ const DialogItem = ( props ) => (
 
 
 DialogItem.propTypes = {
-    
+    text: PropTypes.string,
+    user: PropTypes.object
 };
 
 export default DialogItem;

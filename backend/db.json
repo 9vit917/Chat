@@ -1,0 +1,85 @@
+{
+    "dialogs": [
+        {
+          "_id": "5e707807c862a90a252ecf74",
+          "text": "Ipsum ex et qui labore elit. Aliqua et enim esse anim ullamco aute exercitation culpa veniam duis. Incididunt incididunt in aliquip nostrud esse Lorem adipisicing velit. Elit tempor dolore irure irure laborum duis. Do laboris elit nisi labore.\r\n",
+          "user": {
+            "id": 0,
+            "fullname": "Bianca Romero",
+            "avatar": "https://images.alphacoders.com/711/thumb-350-711581.jpg"
+          }
+        },
+        {
+          "_id": "5e707807f045bd4dcd7145ab",
+          "text": "Aliquip minim non cillum nisi anim amet deserunt incididunt veniam aute id et. Eiusmod sunt elit ullamco nostrud laborum officia aliqua. Irure ex ipsum sint pariatur esse nostrud voluptate tempor deserunt magna voluptate. Reprehenderit ad incididunt dolor tempor excepteur ullamco aliquip adipisicing ex et proident anim qui.\r\n",
+          "user": {
+            "id": 1,
+            "fullname": "Tanya Hogan",
+            "avatar": "https://filmschoolrejects.com/wp-content/uploads/2017/04/0JRofTsuy93evl_J5.jpg"
+          }
+        },
+        {
+          "_id": "5e7078077b94e2e8de8d0f12",
+          "text": "Aliqua anim commodo veniam magna elit voluptate quis deserunt dolor. Eu non eiusmod nisi sunt sint. Nostrud consectetur voluptate commodo occaecat est eiusmod nostrud ipsum magna. Mollit quis quis Lorem quis eiusmod irure aliquip incididunt proident voluptate laborum. Sit deserunt aute proident dolor. Ullamco ex quis consequat proident quis sint et sit est aute anim.\r\n",
+          "user": {
+            "id": 2,
+            "fullname": "Jami Macias",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e707807f56d9047b0e2b73b",
+          "text": "Est commodo cupidatat adipisicing consequat culpa excepteur adipisicing sunt aute irure culpa cupidatat id. Ullamco cillum aute occaecat nostrud officia exercitation cupidatat veniam quis minim. Ipsum occaecat elit aliqua occaecat proident qui exercitation nisi velit voluptate ea.\r\n",
+          "user": {
+            "id": 3,
+            "fullname": "Little Best",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e7078073d780020cd7bc568",
+          "text": "Nulla exercitation adipisicing commodo qui. Laborum occaecat veniam qui proident id enim adipisicing fugiat commodo ad eu ad. Labore excepteur amet aliquip Lorem sit incididunt qui culpa ullamco culpa irure officia Lorem. Qui Lorem ad pariatur nisi aliqua adipisicing reprehenderit pariatur veniam non Lorem Lorem deserunt est.\r\n",
+          "user": {
+            "id": 4,
+            "fullname": "Boyle Flores",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e707807bbb6130384e8271c",
+          "text": "Nostrud laboris duis laboris do commodo eiusmod id nostrud et. Nostrud ipsum incididunt reprehenderit eu cillum ipsum. Quis amet elit quis consequat esse Lorem nostrud.\r\n",
+          "user": {
+            "id": 5,
+            "fullname": "Lori Summers",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e707807d5f79abbea574069",
+          "text": "Eiusmod dolor cillum consectetur in ut velit esse sint ullamco. Et dolor voluptate ad ad laboris culpa enim nisi anim. Esse do ullamco veniam anim nostrud. Quis in magna anim aute minim esse labore irure minim labore laborum pariatur minim labore. Proident sunt irure ipsum amet consequat magna et incididunt ea.\r\n",
+          "user": {
+            "id": 6,
+            "fullname": "Rena Blackburn",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e707807e9dc756cb25d3999",
+          "text": "Consectetur id ut eu aliquip voluptate et in occaecat exercitation fugiat proident fugiat. Anim commodo laborum adipisicing enim sit cupidatat Lorem. Consectetur tempor incididunt irure excepteur proident est quis officia. Quis aliquip exercitation reprehenderit sint labore eu nulla anim quis eu laborum non. Excepteur deserunt eu non minim adipisicing ullamco occaecat nulla incididunt consequat amet.\r\n",
+          "user": {
+            "id": 7,
+            "fullname": "Cathleen Coleman",
+            "avatar": null
+          }
+        },
+        {
+          "_id": "5e707807fc1a64d4c0ab7789",
+          "text": "Reprehenderit reprehenderit labore occaecat consequat. Occaecat velit enim duis sint. Consectetur dolore fugiat voluptate dolor et excepteur irure sunt sint adipisicing Lorem incididunt. Laborum culpa duis irure qui mollit aliqua labore quis dolore consequat nisi aliquip labore in. Quis occaecat cupidatat Lorem quis nulla pariatur elit anim reprehenderit. Aliquip ullamco in commodo tempor fugiat esse aute consectetur veniam enim incididunt dolor aliqua.\r\n",
+          "user": {
+            "id": 8,
+            "fullname": "Hughes Sawyer",
+            "avatar": null
+          }
+        }
+      ]
+}

@@ -51,6 +51,10 @@
                 flex: auto;
                 color: $text-light;
                 font-size: 13px;
+                max-width: 200px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             &__count {
                 position: relative;
