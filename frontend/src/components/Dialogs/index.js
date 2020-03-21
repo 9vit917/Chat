@@ -1,19 +1,24 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 
+import { dialogsActions } from '../../store/actions';
 import { DialogItem } from "../../components";
-import { api } from "../../global/helpers/api";
 
 import './index.scss';
 
 
-const Dialogs = ( { items } ) => {
+const Dialogs = ( {setCurrentDialog, fetchAllDialogs, items } ) => {
     const [dialogs, setDialogs] = useState([]);
-    if(!dialogs.length) {
-        api.getAll().then(res => {
-            setDialogs(res.data.map((el) => <DialogItem key={el._id} {...el}/>));
-        });
-    }
+
+    useEffect(() => {
+        if(!items.length){
+            fetchAllDialogs();
+        }
+        else {
+            setDialogs(items.map((el) => <DialogItem onSelect={setCurrentDialog} key={el._id} {...el}/>));
+        }
+    }, [items])
 
     return (
         <div className="dialogs-bar">
@@ -27,4 +32,7 @@ Dialogs.propTypes = {
     
 };
 
-export default Dialogs;
+export default connect(
+    ({ dialogs }) => dialogs, 
+     dialogsActions
+    )(Dialogs);
