@@ -4,15 +4,16 @@ import classNames from "classnames";
 import './index.scss';
 
 const getShortName = (name) => {
+    console.log(name);
     return name.split(' ').map((el) => el.substring(0,1)).join('');
 }
 
-const Avatar = ( { img, name, status } ) => (
+const Avatar = ( { user, status } ) => (
     <div className={classNames("avatar")}>
         {
-            img ? <img src={ img } alt="avatar" /> :
+            user.avatar ? <img src={ user.avatar } alt="avatar" /> :
             <div className="avatar_alt">
-                <span>{ getShortName(name) }</span>
+                <span>{ getShortName(user.fullname) }</span>
             </div>
         }
     </div>

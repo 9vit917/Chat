@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Message, Dialogs, SendOptions } from "../../components";
+import { Messages, Message, Dialogs, SendOptions } from "../../components";
 import './index.scss';
 
 const Home = () => {
@@ -20,7 +20,8 @@ const Home = () => {
                 </div>
                 <div className="window__content__chat">
                     <div className="window__content__chat__messages">
-                    <Message
+                        <Messages/>
+                    {/* <Message
                     avatar="https://filmschoolrejects.com/wp-content/uploads/2017/04/0JRofTsuy93evl_J5.jpg"
                     text="azaza raka maka fo fristylo"
                     date="Fri Mar 06 2020 18:41:08"
@@ -60,7 +61,7 @@ const Home = () => {
                     avatar="https://filmschoolrejects.com/wp-content/uploads/2017/04/0JRofTsuy93evl_J5.jpg"
                     isMe={false}
                     isReaded={true}
-                    isTyping={true}/>
+                    isTyping={true}/> */}
                     </div>
                     <div className="window__content__chat__options">
                         <SendOptions />

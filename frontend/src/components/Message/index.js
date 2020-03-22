@@ -33,36 +33,45 @@ const setText = (text) => {
     )
 }
 
-const Message = ( props ) => (
-
+const Message = ( 
+    {
+        user,
+        text, 
+        isTyping, 
+        attachment, 
+        audio, 
+        date, 
+        isReaded, 
+        isMe
+    } ) => (
         <div className={ classNames('message' , 
-            {"message--friend": props.isMe}) 
+            {"message--friend": isMe}) 
             }>
-            <Avatar img={ props.avatar } />
+            <Avatar user={user}/>
             <div className="message__content">
-                {   (props.text || props.isTyping) && 
+                {   (text || isTyping) && 
                     (<div className="message__content__wrapper">
-                        { props.text && setText(props.text) }
-                        { props.isTyping && <Typing /> }
+                        { text && setText(text) }
+                        { isTyping && <Typing /> }
                     </div>)
                 }
                 {
-                    props.attachment &&
+                    attachment &&
                     <div className="message__content__attachment">
-                        <img src={props.attachment[0]} alt="attachment"/>
+                        <img src={attachment[0]} alt="attachment"/>
                     </div>
                 }
                 {
-                    props.audio && 
+                    audio && 
                     (
                         <div className="message__content__wrapper">
-                            <AudioMessage audio={props.audio}/>
+                            <AudioMessage audio={audio}/>
                         </div>        
                     )
                 }
-                { props.date && setDate(props.date) }
+                { date && setDate(date) }
             </div>
-            { !props.isMe && setStatus(props.isReaded) }
+            { !isMe && setStatus(isReaded) }
         </div>
 )
 

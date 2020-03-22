@@ -6,12 +6,12 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import './index.scss';
 import Avatar from '../Message/Avatar'; //maybe move up from message component
 
-const DialogItem = ( { _id, user, text, onSelect } ) => (
+const DialogItem = ( { id, user, text, onSelect } ) => (
     <div 
     className="dialog__item"
-    onClick={onSelect.bind(this, _id)}>
+    onClick={onSelect.bind(this, id)}>
         <div className="dialog__item__avatar">
-            <Avatar img={ user.avatar } name={ user.fullname }/>
+            <Avatar user={user}/>
         </div>
         <div className="dialog__item__content">
             <div className="dialog__item__content__top">

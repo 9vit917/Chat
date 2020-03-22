@@ -16,7 +16,7 @@ const Dialogs = ( {setCurrentDialog, fetchAllDialogs, items } ) => {
             fetchAllDialogs();
         }
         else {
-            setDialogs(items.map((el) => <DialogItem onSelect={setCurrentDialog} key={el._id} {...el}/>));
+            setDialogs(items.map((el) => <DialogItem onSelect={setCurrentDialog} key={el.id} {...el}/>));
         }
     }, [items])
 

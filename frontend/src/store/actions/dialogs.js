@@ -10,7 +10,7 @@ const actions = {
         payload: id
     }),
     fetchAllDialogs: () => dispatch => {
-        dialogsApi.getAll().then( ({ data }) => {
+        dialogsApi.getDialogs().then( ({ data }) => {
             dispatch(actions.setDialogs(data));
         });
     }
