@@ -9,7 +9,7 @@ import { Message } from "../../components";
 import './index.scss';
 
 
-const Messages = ( {currentDialog,fetchAllMessages, messages } ) => {
+const Messages = ( { currentDialog,fetchAllMessages, messages } ) => {
     const [listOfMessage, setMessages] = useState([]);
 
     useEffect(() => {

@@ -7,6 +7,21 @@
     flex-direction: row;
     padding: 5px 0;
     cursor: pointer;
+    &.active {
+        background-color: #9fa0fc;
+        #{$root}__content {
+            &__top {
+                &__date {
+                    color: white;
+                }
+            }
+            &__bottom {
+                &__text {
+                    color: white;
+                }
+            }
+        }
+    }
     &:hover {
         background:linear-gradient(160deg, rgba(80,63,245,1) 0%, rgba(127,140,255,1) 100%);
             #{$root}__content {

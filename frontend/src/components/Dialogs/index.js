@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
@@ -8,21 +8,21 @@ import { DialogItem } from "../../components";
 import './index.scss';
 
 
-const Dialogs = ( {setCurrentDialog, fetchAllDialogs, items } ) => {
-    const [dialogs, setDialogs] = useState([]);
-
+const Dialogs = ( { currentDialog, setCurrentDialog, fetchAllDialogs, items } ) => {
     useEffect(() => {
         if(!items.length){
             fetchAllDialogs();
-        }
-        else {
-            setDialogs(items.map((el) => <DialogItem onSelect={setCurrentDialog} key={el.id} {...el}/>));
         }
     }, [items])
 
     return (
         <div className="dialogs-bar">
-            { dialogs }
+            { items.map((el) => 
+            <DialogItem 
+            currentDialog={currentDialog} 
+            onSelect={setCurrentDialog} 
+            key={el.id} 
+            {...el}/>) }
         </div>
     )
 }

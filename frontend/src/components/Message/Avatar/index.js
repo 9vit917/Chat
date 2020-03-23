@@ -4,7 +4,6 @@ import classNames from "classnames";
 import './index.scss';
 
 const getShortName = (name) => {
-    console.log(name);
     return name.split(' ').map((el) => el.substring(0,1)).join('');
 }
 
