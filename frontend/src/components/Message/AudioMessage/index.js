@@ -7,6 +7,7 @@ import { convertTime } from '../../../global/helpers';
 import './index.scss';
 
 
+// где это посмотреть можно?)
 const AudioMessage = ( props ) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -31,6 +32,7 @@ const AudioMessage = ( props ) => {
         })
     }, [])
 
+    // не называй хэндлеры существительными
     const player = (ev) => {
         if(!isPlaying) {
             audio.current.play();

@@ -3,6 +3,8 @@ import React from 'react';
 import './index.scss';
 
 
+// странный компонент
+// зачем лист из трёх li?
 const Typing = ( props ) => (
     <ul className="typing">
         <li></li>
@@ -11,7 +13,7 @@ const Typing = ( props ) => (
     </ul>
 );
 
-
+// не надо создавать лишние штуки когда ты их не используешь
 Typing.propTypes = {
     
 };

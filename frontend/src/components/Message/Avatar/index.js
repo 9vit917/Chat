@@ -8,6 +8,7 @@ const getShortName = (name) => {
 }
 
 const Avatar = ( { user, status } ) => (
+    // зачем тут classnames? для простого класса
     <div className={classNames("avatar")}>
         {
             user.avatar ? <img src={ user.avatar } alt="avatar" /> :

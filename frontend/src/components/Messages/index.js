@@ -14,6 +14,9 @@ const Messages = ( { currentDialog,fetchAllMessages, messages } ) => {
 
     useEffect(() => {
         if(currentDialog !== null) {
+            /**
+             * Можно в redux thunk action вынести запрос к api
+             */
             fetchAllMessages(currentDialog).then((currentMessages)=>{
                 if(!!currentMessages.items.length){
                     dialogsApi.getDialogById(currentDialog).then(({ data })=>{
