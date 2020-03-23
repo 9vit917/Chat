@@ -109,6 +109,7 @@ class RegisterForm extends Component {
                         </Button>
                     </Form.Item>
                     <Form.Item>
+                        {/* роуты обычно в константы выносить (хотя бы во избежание ошибок) */}
                         <Link className="auth__register-link" to="/login">
                             Sign In
                         </Link>

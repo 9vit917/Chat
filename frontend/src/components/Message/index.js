@@ -9,6 +9,10 @@ import AudioMessage from "./AudioMessage";
 import './index.scss';
 
 
+/**
+ * по сути это просто компоненты - не надо их называть set*
+ */
+
 const setStatus = (isReaded) => {
     return (
         <div className="message__status">
@@ -34,6 +38,7 @@ const setText = (text) => {
 }
 
 const Message = ( 
+    // Лучше все пропсы в один объект Message сгруппировать чтоб все каждый раз не писать 
     {
         user,
         text, 

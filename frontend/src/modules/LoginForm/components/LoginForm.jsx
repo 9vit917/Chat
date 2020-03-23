@@ -6,8 +6,15 @@ import { Link } from 'react-router-dom';
 
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
+// Можно сделать функцией
 class LoginForm extends Component {
     render() {
+        /**
+         * 1. В функции рендер не надо писать коллбэки - она каждый раз пересоздаётся, что плохо для перформанса
+         * В классовых компонентах лучше это сделать полем класса, в функциональных - юзать useCallback
+         * 
+         * 2. А рега и логин не работает??
+        **/
         const onFinish = values => {
             console.log('Received values of form: ', values);
           };
@@ -21,6 +28,7 @@ class LoginForm extends Component {
                 </div>
                 <Block>
                     <Form
+                    // Сделай норм отступы
                     name="normal_login"
                     className="login-form"
                     initialValues={{

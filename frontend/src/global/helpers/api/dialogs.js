@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Некруто в каждом файле это копипастить :(
 axios.defaults.baseURL = 'http://localhost:3004';
 
 const api = {

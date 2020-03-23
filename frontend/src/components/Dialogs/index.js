@@ -10,6 +10,12 @@ import './index.scss';
 
 const Dialogs = ( { currentDialog, setCurrentDialog, fetchAllDialogs, items } ) => {
     useEffect(() => {
+        /**
+         * Получается что за всю сессию диалоги загрузятся только один раз?
+         * А если новый?
+         * Но при этом если диалогов 0, то грузится будут они при каждом пересоздании компонента
+         * Трохи странная логика
+         */
         if(!items.length){
             fetchAllDialogs();
         }
