@@ -147,13 +147,13 @@
           },
           {
             "id": 3,
-            "text": "Aliquip esse esse ut do est exercitation magna nisi proident veniam fugiat tempor laborum.",
-            "isMe": true
+            "audio": "https://notificationsounds.com/soundfiles/298f95e1bf9136124592c8d4825a06fc/file-sounds-1105-rush.mp3",
+            "isMe": false
           },
           {
             "id": 4,
             "text": "Ut veniam velit duis amet nostrud culpa.",
-            "isMe": false
+            "isMe": true
           },
           {
             "id": 5,

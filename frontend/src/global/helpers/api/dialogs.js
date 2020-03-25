@@ -1,7 +1,4 @@
-import axios from "axios";
-
-// Некруто в каждом файле это копипастить :(
-axios.defaults.baseURL = 'http://localhost:3004';
+import axios from "./axios";
 
 const api = {
     getDialogs: () => axios.get('/dialogs'),

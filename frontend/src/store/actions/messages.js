@@ -1,16 +1,22 @@
-import { messagesApi } from "../../global/helpers/api";
+import { messagesApi, dialogsApi } from "../../global/helpers/api";
 
 const actions = {
-    setMessages: items => ({
+    setMessages: (messages,chatFriendInfo) => ({
         type: 'MESSAGES:SET_ITEMS',
-        payload: items
+        payload: {
+            messages,
+            chatFriendInfo,
+        }
     }),
-    fetchAllMessages: (dialogId) => dispatch => new Promise((res,rej)=>{
+    fetchAllMessages: (dialogId) => dispatch => {
         messagesApi.getMessagesById(dialogId).then( ({ data }) => {
-            dispatch(actions.setMessages(data));
-            res(data);
+            let messages = data.items;
+            dialogsApi.getDialogById(dialogId).then(({ data })=> {
+                let chatFriend = data.user;
+                dispatch(actions.setMessages(messages, chatFriend ));
+            })
         });
-    })
+    }
 }
 
 

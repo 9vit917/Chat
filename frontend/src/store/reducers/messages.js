@@ -1,12 +1,14 @@
 const initialState = {
-    items: []
+    items: [],
+    chatFriendInfo: {}
 }
 
 export default (state = initialState, { type, payload }) => {
     switch(type) {
          case 'MESSAGES:SET_ITEMS':
          return {
-            items: payload 
+            items: payload.messages,
+            chatFriendInfo: payload.chatFriendInfo 
          };
          default:
              return state;

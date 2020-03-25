@@ -9,11 +9,7 @@ import AudioMessage from "./AudioMessage";
 import './index.scss';
 
 
-/**
- * по сути это просто компоненты - не надо их называть set*
- */
-
-const setStatus = (isReaded) => {
+const statusComponent = (isReaded) => {
     return (
         <div className="message__status">
             <span className={classNames("message__status__icon", {"readed": isReaded, "not-readed": !isReaded})}></span>
@@ -21,7 +17,7 @@ const setStatus = (isReaded) => {
     )
 }
 
-const setDate = (date) => {
+const dateComponent = (date) => {
     return (
         <div className="message__content__date">
             { formatDistanceToNow(new Date(date), {addSuffix: true}) }
@@ -29,7 +25,7 @@ const setDate = (date) => {
     )
 }
 
-const setText = (text) => {
+const textComponent = (text) => {
     return (
         <p className="message__content__text">
             { text }
@@ -56,7 +52,7 @@ const Message = (
             <div className="message__content">
                 {   (text || isTyping) && 
                     (<div className="message__content__wrapper">
-                        { text && setText(text) }
+                        { text && textComponent(text) }
                         { isTyping && <Typing /> }
                     </div>)
                 }
@@ -74,9 +70,9 @@ const Message = (
                         </div>        
                     )
                 }
-                { date && setDate(date) }
+                { date && dateComponent(date) }
             </div>
-            { !isMe && setStatus(isReaded) }
+            { !isMe && statusComponent(isReaded) }
         </div>
 )
 

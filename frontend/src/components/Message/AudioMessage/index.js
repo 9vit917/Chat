@@ -7,7 +7,6 @@ import { convertTime } from '../../../global/helpers';
 import './index.scss';
 
 
-// где это посмотреть можно?)
 const AudioMessage = ( props ) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -32,8 +31,7 @@ const AudioMessage = ( props ) => {
         })
     }, [])
 
-    // не называй хэндлеры существительными
-    const player = (ev) => {
+    const changeStatus = (ev) => {
         if(!isPlaying) {
             audio.current.play();
             setIsPlaying(true);
@@ -54,10 +52,10 @@ const AudioMessage = ( props ) => {
                 <div className="audio-message__info__btn">
                 {
                     isPlaying ? 
-                    ( <button onClick={ player}> 
+                    ( <button onClick={ changeStatus}> 
                         <img src={pause} alt="pause"/>
                     </button> ) :
-                    ( <button onClick={ player }>
+                    ( <button onClick={ changeStatus }>
                         <img src={play} alt="play"/> 
                     </button> )
                 }

@@ -6,10 +6,9 @@ import { Auth, Home } from "./pages";
 function App() {
   return (
     <div className="wrapper">
-      {/* Почему это вложенный Auth route? Лучше просто здесь сразу написать два роута Login и Register
-      Не вижу ни одной причины делать вложенным) */}
-      {/* registe>r< */}
-      <Route exact path={['/', '/login', '/registe']} component={ Auth } />
+      {/* Настроить роуты */}
+      <Route exact path={['/', '/login']} component={ Auth } />
+      <Route exact path='/registe' component={ Auth } />
       <Route exact path="/im" component={ Home } />
     </div>
   );
