@@ -8,6 +8,12 @@ const actions = {
             chatFriendInfo,
         }
     }),
+
+    addMessage: (message) => ({
+        type: 'MESSAGES:ADD_ITEM',
+        payload: message
+    }),
+
     fetchAllMessages: (dialogId) => dispatch => {
         messagesApi.getMessagesById(dialogId).then( ({ data }) => {
             let messages = data.items;

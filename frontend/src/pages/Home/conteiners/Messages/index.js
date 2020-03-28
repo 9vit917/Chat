@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
-import { messagesActions } from '../../store/actions';
-import { Message } from "../../components";
+import { messagesActions } from '../../../../store/actions';
+import { Message } from "../../../../components";
 
 import './index.scss';
 
