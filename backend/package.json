@@ -5,11 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server --watch db.json --port 3004"
+    "start": "ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "json-server": "^0.16.1"
+    "@types/express": "^4.17.3",
+    "@types/mongoose": "^5.7.8",
+    "@types/node": "^13.9.5",
+    "@types/validator": "^12.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "json-server": "^0.16.1",
+    "mongoose": "^5.9.6",
+    "socket.io": "^2.3.0",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3",
+    "validator": "^13.0.0"
   }
 }

@@ -11,7 +11,7 @@ const actions = {
 
     addMessage: (message) => ({
         type: 'MESSAGES:ADD_ITEM',
-        payload: message
+        message
     }),
 
     fetchAllMessages: (dialogId) => dispatch => {
