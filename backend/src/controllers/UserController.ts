@@ -1,13 +1,13 @@
 import express from "express";
 
-import { UserModule } from "../models";
+import { UserModel } from "../models";
 
 
 class UserController {
 
     show(req: express.Request , res: express.Response) {
         const id:string = req.params.id;
-        UserModule.findById(id).then((user) => {
+        UserModel.findById(id).then((user) => {
             res.json(user);
         })
         .catch((err:any)=> {
@@ -21,7 +21,7 @@ class UserController {
           fullname: req.body.fullname,
           password: req.body.password
         }
-        const user = new UserModule(postDate);
+        const user = new UserModel(postDate);
         user.save().then((obj:any) => 
           res.json(obj)
         )
@@ -32,7 +32,7 @@ class UserController {
 
     delete( req: express.Request, res: express.Response ) {
         const _id = req.params.id;
-        UserModule.findOneAndRemove({_id: _id}).then((obj:any) => 
+        UserModel.findOneAndRemove({_id: _id}).then((obj:any) => 
           res.send("User deleted")
         )
         .catch((err:any)=> {
