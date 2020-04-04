@@ -3,12 +3,12 @@ import isEmail from 'validator/lib/isEmail';
 
 export interface IUser extends Document {
     email: string;
-    avatar: string;
+    avatar?: string;
     fullname: string;
     confirmed: boolean;
     password: string;
-    confirm_hash: string;
-    last_seen: Date;
+    confirm_hash?: string;
+    last_seen?: Date;
 }
 
 const UserSchema = new Schema({ 
@@ -32,7 +32,10 @@ const UserSchema = new Schema({
         default: false
     },
     confirmed_hash: String,
-    last_seen: Date 
+    last_seen: {
+        type: Date,
+        default: new Date()
+    } 
 }, {
     timestamps: true
 });

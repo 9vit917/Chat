@@ -1,6 +1,8 @@
 import express from "express";
 
 import { UserModel } from "../models";
+import { createJWTToken } from "../utils"
+import { IUser } from "../models/User";
 
 
 class UserController {
@@ -38,6 +40,33 @@ class UserController {
         .catch((err:any)=> {
             res.status(404).json(err)
         });
+    }
+
+    login( req: express.Request, res: express.Response ) {
+        const postDate = {
+            email: req.body.email,
+            password: req.body.password
+        };
+
+        UserModel.findOne({email: postDate.email}, (err, user: IUser) => {
+            if(err) {
+                return res.json({
+                    message: "User not faund"
+                })
+            }
+            if(user.password === postDate.password) {
+                const token = createJWTToken(postDate);
+                res.json({
+                    status: "success",
+                    token: token
+                });
+            }else {
+                res.json({
+                    status: "error",
+                    message: 'Incorrect password or email'
+                });
+            }
+        })
     }
 }
 

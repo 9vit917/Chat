@@ -6,6 +6,10 @@ export interface IMessage extends Document {
         type: Schema.Types.ObjectId;
         ref: string;
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: string
+    }
     isRead: boolean,
     text: string
 }
@@ -16,7 +20,14 @@ const MessageSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Dialog"
     },
-    isRead: Boolean,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }, 
+    isRead: {
+        type: Boolean,
+        default: false
+    },
     text: String 
 }, {
     timestamps: true
