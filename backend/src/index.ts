@@ -10,6 +10,7 @@ import {
 } from './controllers';
 
 import { checkAuth } from "./middleware";
+import { loginValidation } from "./utils/validation";
 
 const app = express();
 
@@ -34,7 +35,7 @@ mongoose.connect(
 
 app.get('/user/:id', User.show);
 app.delete('/user/:id', User.delete);
-app.post('/user', User.create);
+app.post('/user/registration', User.create);
 app.post('/user/login', User.login);
 
 app.get('/dialogs', Dialog.show);
