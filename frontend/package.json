@@ -136,7 +136,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.10.0",
     "node-sass": "^4.13.1",
